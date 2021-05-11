@@ -9,8 +9,36 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
-    <script type="text/x-template"class="shoe-catalogue">
-        
+    <script type="text/x-template"class="shoe-catalogue-template">
+        {{#each shoes-catalogue}}
+        <div class="shoes-section">
+            <table>
+                <img src="{{img}}" alt="img">
+                <tr>
+                    <td>{{this.brand}}</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        {{this.size}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        {{this.color}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        {{this.price}}
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        {{/each}}
     </script>
 
 </head>
@@ -52,7 +80,7 @@
                     <option value="">Select Color</option>
                     <option value="Black">Black</option>
                     <option value="White">White</option>
-                    <option value="Black-White">Black and White</option>
+                    <option value="Green">Green</option>
                     <option value="Grey">Grey</option>
                     <option value="Red">Red</option>
                     <option value="Blue">Blue</option>
