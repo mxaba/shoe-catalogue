@@ -10,10 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
     <script type="text/x-template"class="shoe-catalogue-template">
-        {{#each shoes-catalogue}}
+        {{#each shoesList}}
         <div class="shoes-section">
             <table>
-                <img src="{{img}}" alt="img">
+                <img src="{{this.img}}" alt="">
                 <tr>
                     <td>{{this.brand}}</td>
                 </tr>
@@ -32,7 +32,7 @@
 
                 <tr>
                     <td>
-                        {{this.price}}
+                        R {{this.price}}
                     </td>
                 </tr>
 
@@ -60,7 +60,7 @@
 
             <div class="col-4">
                 <select name="" class="size-section">
-                    <option value="">Slect Zise</option>
+                    <option value="">Slect Size</option>
                     <option value=1>1</option>
                     <option value=2>2</option>
                     <option value=3>3</option>
@@ -121,6 +121,7 @@
     </div>
 
     <script src="./js/shoe-catalogue-logic.js"></script>
+    <script src="./js/data.js"></script>
     <script src="./js/shoe-catalogue-dom.js"></script>
 
 </body>

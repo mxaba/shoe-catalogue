@@ -1,4 +1,20 @@
 * {
     align-items: center;
     text-align: center;
+    background: rgb(221, 221, 221);
+    font-weight: 400;
+}
+
+.shoes-section {
+    float: left;
+    padding: 2%;
+    border: rgb(116, 116, 116) solid 5px;
+    border-radius: 5%;
+    align-items: center;
+    text-align: center;
+}
+
+img {
+    height: 150px;
+    width: 150px;
 }
