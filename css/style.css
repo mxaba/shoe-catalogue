@@ -8,10 +8,11 @@
 .shoes-section {
     float: left;
     padding: 2%;
-    border: rgb(116, 116, 116) solid 5px;
+    /* border: rgb(116, 116, 116) solid 5px; */
     border-radius: 5%;
     align-items: center;
     text-align: center;
+    margin-left: 5%;
 }
 
 img {
