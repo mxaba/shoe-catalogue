@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function displayShoes(){
         shoeSection.innerHTML = shoeCompiledTemplate({shoesList: initLogic.getShoeData()} )
-        console.log(shoeCompiledTemplate({shoesList: initLogic.getShoeData()} ))
+        // console.log(shoeCompiledTemplate({shoesList: initLogic.getShoeData()} ))
     }
 
 })

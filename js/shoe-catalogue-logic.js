@@ -6,6 +6,8 @@ function ShoesCatalogue(){
         return shoeData
     }
 
+    // function
+
 
     return {
         getShoeData

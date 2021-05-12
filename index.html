@@ -12,12 +12,14 @@
     <script type="text/x-template"class="shoe-catalogue-template">
         {{#each shoesList}}
         <div class="shoes-section">
-                <img src="{{this.img}}" alt="">
+                <a href="checkout.html?({this.img})"><img src="{{this.img}}" alt=""></a> 
                     <p>
                         {{this.brand}}, 
                         <strong>Size: </strong> {{this.size}}, <br>
                         <strong>Color: </strong> {{this.color}},
-                        <strong>Price: </strong>  R {{this.price}}
+                        <strong>Price: </strong>  R {{this.price}} <br>
+                        <!-- <strong>Stock: </strong>  {{this.in_stock}} -->
+                        <!-- <button>Add</button> -->
                     </p>
         </div>
         {{/each}}
