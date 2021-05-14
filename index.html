@@ -19,7 +19,7 @@
                         <strong>Color: </strong> {{this.color}}, <br>
                         <strong>Price: </strong>  R {{this.price}} <br>
                         <strong>Stock: </strong>  {{this.in_stock}} <br>
-                        <button value={{this.value}} >Add to Cart</button>
+                        <button value={{this.value}} onclick="addBtnCart({{this.value}})" >Add to Cart</button>
                     </p>
         </div>
         {{/each}}
@@ -43,43 +43,43 @@
 
         <div class="row">
             <div class="col-4">
-                <select name="" class="brand-section">
-                    <option value="">Select a Brand</option>
-                    <option value="Vans">Vans</option>
-                    <option value="All-Star">All Star</option>
-                    <option value="Nike">Nike</option>
-                    <option value="Jordan">Jordan</option>
-                    <option value="Puma">Puma</option>
+                <select name="" id="brand" class="brand-section">
+                    <option id="" value="">Select a Brand</option>
+                    <option id="" value="Vans">Vans</option>
+                    <option id="" value="All-Star">All Star</option>
+                    <option id="" value="Nike">Nike</option>
+                    <option id="" value="Jordan">Jordan</option>
+                    <option id="" value="Puma">Puma</option>
                 </select>
             </div>
 
             <div class="col-4">
-                <select name="" class="size-section">
-                    <option value="">Slect Size</option>
-                    <option value=1>1</option>
-                    <option value=2>2</option>
-                    <option value=3>3</option>
-                    <option value=4>4</option>
-                    <option value=5>5</option>
-                    <option value=6>6</option>
-                    <option value=7>7</option>
-                    <option value=8>8</option>
-                    <option value=9>9</option>
-                    <option value=10>10</option>
-                    <option value=11>11</option>
+                <select name="" id="size" class="size-section">
+                    <option id="" value="">Slect Size</option>
+                    <option id="" value=1>1</option>
+                    <option id="" value=2>2</option>
+                    <option id="" value=3>3</option>
+                    <option id="" value=4>4</option>
+                    <option id="" value=5>5</option>
+                    <option id="" value=6>6</option>
+                    <option id="" value=7>7</option>
+                    <option id="" value=8>8</option>
+                    <option id="" value=9>9</option>
+                    <option id="" value=10>10</option>
+                    <option id="" value=11>11</option>
                 </select>
                 
             </div>
 
             <div class="col-4">
-                <select name="" id="color-section" class="section-color">
-                    <option value="">Select Color</option>
-                    <option value="Black">Black</option>
-                    <option value="White">White</option>
-                    <option value="Green">Green</option>
-                    <option value="Grey">Grey</option>
-                    <option value="Red">Red</option>
-                    <option value="Blue">Blue</option>
+                <select name="" id="color" class="color-section">
+                    <option id="" value="">Select Color</option>
+                    <option id="" value="Black">Black</option>
+                    <option id="" value="White">White</option>
+                    <option id="" value="Green">Green</option>
+                    <option id="" value="Grey">Grey</option>
+                    <option id="" value="Red">Red</option>
+                    <option id="" value="Blue">Blue</option>
                 </select>
             </div>
 
@@ -91,7 +91,6 @@
                 <div class="buttons">
                     <button class="search">Search</button>
                     <button class="reset">Rest</button>
-                    
                 </div>
             </div>
 
@@ -117,8 +116,8 @@
         
     </div>
 
-    <script src="./js/shoe-catalogue-logic.js"></script>
     <script src="./js/data.js"></script>
+    <script src="./js/shoe-catalogue-logic.js"></script>
     <script src="./js/shoe-catalogue-dom.js"></script>
 
     <script>
