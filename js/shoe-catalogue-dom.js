@@ -1,17 +1,18 @@
-document.addEventListener('DOMContentLoaded', function(){
+// document.addEventListener('DOMContentLoaded', function(){
     var shoeCatalogueTemplate = document.querySelector('.shoe-catalogue-template').innerHTML
     var shoeCompiledTemplate = Handlebars.compile(shoeCatalogueTemplate)
 
     var shoeSection = document.querySelector('.shoe-section')
+    var reset = document.querySelector('.reset')
 
     var initLogic = ShoesCatalogue()
     var shoeLocal = {}
 
     if (localStorage['shoeCatalogue']){
-        console.log('Local Data')
+        console.log('shoeCatalogue')
         shoeLocal = JSON.parse(localStorage.getItem('shoeCatalogue'))
     } else {
-        console.log('Own Data')
+        console.log('Data Object')
         shoeLocal = Data()
     }
 
@@ -22,6 +23,17 @@ document.addEventListener('DOMContentLoaded', function(){
         shoeSection.innerHTML = shoeCompiledTemplate({shoesList: array} )
         // console.log(shoeCompiledTemplate({shoesList: initLogic.getShoeData()} ))
     }
+
+    function addBtnCart(init){
+        // location.reload()
+        shoeSection.innerHTML = shoeCompiledTemplate({shoesList: initLogic.addBtnCart(init)})
+        // initLogic.addBtnCart(init)
+    }
+
+    reset.addEventListener('click', function(){
+        localStorage.clear()
+        location.reload()
+    })
 
     document.querySelector('.search').addEventListener('click', function(){
         var colorValue = document.getElementById('color').value
@@ -55,4 +67,4 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     })
 
-})
+// })

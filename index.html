@@ -19,7 +19,7 @@
                         <strong>Color: </strong> {{this.color}}, <br>
                         <strong>Price: </strong>  R {{this.price}} <br>
                         <strong>Stock: </strong>  {{this.in_stock}} <br>
-                        <button value={{this.value}} onclick="addBtnCart({{this.value}})" >Add to Cart</button>
+                        <button value={{this._id}} onclick="addBtnCart(this.value)" >Add to Cart</button>
                     </p>
         </div>
         {{/each}}
