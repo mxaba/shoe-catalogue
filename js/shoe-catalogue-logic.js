@@ -1,13 +1,22 @@
 function ShoesCatalogue(){
 
     var shoeData = {}
+    var cartStorage =  []
 
     function setShoeData(namePassed){
         shoeData = namePassed
     }
 
+    function setCartStorrage(namePassed){
+        cartStorage = namePassed
+    }
+
     function getShoeData(){
         return shoeData
+    }
+
+    function getCartStorage(){
+        return cartStorage
     }
 
     function shoesFilterFunction(shoesFlit){
@@ -24,10 +33,8 @@ function ShoesCatalogue(){
         // console.log(shoesFiltered)
         return shoesFiltered
     }
-    // function
 
     function addBtnCart(init){
-        var cartStorage =  [] || JSON.parse(localStorage.getItem('addToCart'))
         // console.log(init)
         var shoeAdded = shoesFilterFunction({_id: init})
         // console.log(shoeAdded)
@@ -36,13 +43,13 @@ function ShoesCatalogue(){
             cartStorage.push(shoeAdded[0])
         }
         setShoeData(shoeData)
-        localStorage.setItem('addToCart', JSON.stringify(cartStorage));
-        localStorage.setItem('shoeCatalogue', JSON.stringify(shoeData));
-        return shoeData
+        return true
     }
 
 
     return {
+        getCartStorage,
+        setCartStorrage,
         addBtnCart,
         shoesFilterFunction,
         setShoeData,

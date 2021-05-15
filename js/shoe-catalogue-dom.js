@@ -16,7 +16,15 @@
         shoeLocal = Data()
     }
 
+    var cartST =  {} 
+    var cartSTArray = []
+    if (typeof localStorage['addToCart'] == Object){
+        cartST = JSON.parse(localStorage.getItem('addToCart'))
+        cartSTArray = JSON.parse(localStorage.getItem('addToCart'))
+    }
+
     initLogic.setShoeData(shoeLocal)
+    initLogic.setCartStorrage(cartSTArray)
     displayShoes(shoeLocal)
 
     function displayShoes(array){
@@ -26,8 +34,12 @@
 
     function addBtnCart(init){
         // location.reload()
-        shoeSection.innerHTML = shoeCompiledTemplate({shoesList: initLogic.addBtnCart(init)})
-        // initLogic.addBtnCart(init)
+
+        if (initLogic.addBtnCart(init)){
+            localStorage.setItem('addToCart', JSON.stringify(initLogic.getCartStorage()));
+            localStorage.setItem('shoeCatalogue', JSON.stringify(initLogic.getShoeData()));
+            location.reload()
+        }
     }
 
     reset.addEventListener('click', function(){
