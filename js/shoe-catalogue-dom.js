@@ -40,10 +40,6 @@
         var brandValue = document.getElementById('brand').value
         var sizeValue = document.getElementById('size').value
 
-        // console.log(brandValue)
-        // console.log(colorValue)
-        // console.log(sizeValue)
-
         var searchData = {}
         
         if (colorValue !== ""){

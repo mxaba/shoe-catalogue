@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Shoe Catalogue</title>
+    <link rel="stylesheet" href="./css/simple-grid.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script type="text/x-template" class="shoe-cart">
+        {{#each shoe-cart}}
+        <div class="shoes-section">
+            <img src="{{this.img}}" alt="">
+            <p>
+                {{this.brand}}, <strong>Size: </strong> {{this.size}} <br>
+                <strong>Color: </strong> {{this.color}} <br>
+                <strong>Price: </strong> {{this.price}} <br>
+                <button value="{{this._id}}" onclick="removeItem(this.value)"></button> <br>
+            </p>
+        </div>
+        {{/each}}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-8" style="text-align: unset; align-items: unset; float: left;">
+                <a href="./"><h2>Shoe Catalogue</h2></a>
+            </div>
+
+            <!-- <div class="col-2">
+                <h6><a href="./cart.html">Cart</a></h6>
+            </div> -->
+            <div class="col-2">
+                <h6><a href="./add.html">Add Shoes</a></h6>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+
+            </div>
+        </div>
+
+        <div class="row" id="cart"></div>
+
+        <div class="row">
+            <div class="col-12">
+                <a href="./"> <button>Shop Again</button> </a> OR
+                <button id="checkOut">Checkout</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/shoe-catalogue-logic.js"></script>
+    <script src="./js/shoe-cart.js"></script>
+</body>
+</html>

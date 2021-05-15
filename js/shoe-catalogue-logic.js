@@ -36,6 +36,7 @@ function ShoesCatalogue(){
             cartStorage.push(shoeAdded[0])
         }
         setShoeData(shoeData)
+        localStorage.setItem('addToCart', JSON.stringify(cartStorage));
         localStorage.setItem('shoeCatalogue', JSON.stringify(shoeData));
         return shoeData
     }
