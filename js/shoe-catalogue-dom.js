@@ -18,7 +18,7 @@
 
     var cartST =  {} 
     var cartSTArray = []
-    if (typeof localStorage['addToCart'] == Object){
+    if (typeof localStorage['addToCart'] == 'object'){
         cartST = JSON.parse(localStorage.getItem('addToCart'))
         cartSTArray = JSON.parse(localStorage.getItem('addToCart'))
     }
@@ -38,7 +38,7 @@
         if (initLogic.addBtnCart(init)){
             localStorage.setItem('addToCart', JSON.stringify(initLogic.getCartStorage()));
             localStorage.setItem('shoeCatalogue', JSON.stringify(initLogic.getShoeData()));
-            location.reload()
+            displayShoes(shoeLocal)
         }
     }
 
@@ -61,8 +61,7 @@
         } if (brandValue !== "") {
             searchData.brand = brandValue
         }
-        // console.log(searchData)
-        // shoeSection.innerHTML = ""
+
         var lenFilter = initLogic.shoesFilterFunction(searchData)
         if (lenFilter.length != 0){
             shoeSection.innerHTML = shoeCompiledTemplate({shoesList: initLogic.shoesFilterFunction(searchData)})

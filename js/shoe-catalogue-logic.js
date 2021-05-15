@@ -40,6 +40,7 @@ function ShoesCatalogue(){
         // console.log(shoeAdded)
         if (shoeAdded[0].in_stock > 0){
             shoeAdded[0].in_stock--
+            shoeAdded[0].qty++
             cartStorage.push(shoeAdded[0])
         }
         setShoeData(shoeData)
