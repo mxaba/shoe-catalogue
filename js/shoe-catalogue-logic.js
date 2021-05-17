@@ -47,8 +47,20 @@ function ShoesCatalogue(){
         return true
     }
 
+    function removeItem(init){
+        var shoesToBeRemoved = shoesFilterFunction({_id: init})[0]
+        if (shoesToBeRemoved.qty > 0){
+            shoesToBeRemoved.in_stock++
+            shoesToBeRemoved.qty--
+            cartStorage.push(shoesToBeRemoved)
+        }
+        setShoeData(shoesData)
+        return true
+    }
+
 
     return {
+        removeItem,
         getCartStorage,
         setCartStorrage,
         addBtnCart,

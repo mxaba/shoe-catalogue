@@ -18,13 +18,15 @@
 
     var cartST =  {} 
     var cartSTArray = []
-    if (typeof localStorage['addToCart'] == 'object'){
+    if (localStorage['addToCart']){
         cartST = JSON.parse(localStorage.getItem('addToCart'))
         cartSTArray = JSON.parse(localStorage.getItem('addToCart'))
     }
 
     initLogic.setShoeData(shoeLocal)
-    initLogic.setCartStorrage(cartSTArray)
+    if (cartSTArray.length !== 0){
+        initLogic.setCartStorrage(cartSTArray)
+    }
     displayShoes(shoeLocal)
 
     function displayShoes(array){
