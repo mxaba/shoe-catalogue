@@ -52,23 +52,20 @@ function ShoesCatalogue(){
     }
 
     function removeItem(init){
-        // var shoesToBeRemoved = []
-        // shoesToBeRemoved = shoesFilterFunction({_id: init})[0]
-        // console.log(shoesToBeRemoved)
-        // console.log(typeof shoesToBeRemoved)
-        // console.log(shoesToBeRemoved.shift())
-        var shoesToAdded = shoesFilterFunction({_id: init})
-        console.log(shoesToAdded)
-        // try{
-        //     cartStorage = cartStorage.filter(function(shoe){
-        //         console.log(shoe)
-        //         return parseInt(init) !== shoe._id
-        //     })
-        // } finally{
-        //     shoesToAdded.in_stock++
-        //     // setCartStorrage()
-        //     setShoeData(shoeData)
-        // }
+        var shoesToAdded = shoesFilterFunction({_id: init})[0]
+        try{
+            cartStorage = cartStorage.filter(function(shoe){
+                if (shoe.qty == 1){
+                    return parseInt(init) !== shoe._id
+                } else{
+                    shoe.qty--
+                    return shoe._id
+                }
+            })
+        } finally{
+            shoesToAdded.in_stock++
+            setShoeData(shoeData)
+        }
         return true
     }
 
@@ -81,27 +78,12 @@ function ShoesCatalogue(){
         // console.log(init)
         var shoeAdded = shoesFilterFunction({_id: init})[0]
         var shoeFli = shoesFilterCart({_id: init})[0]
-        console.log(shoeFli)
 
         // console.log(shoeAdded)
         if (shoeAdded.in_stock > 0){
             shoeAdded.in_stock--
-            var idf = uid()
-         //s   console.log(idf)
-            shoeAdded.newId = idf
-
-            for(elem  in shoeAdded ){
-                console.log(elem)
-shoes = shoeAdded[elem]
-            };
-            console.log(typeof shoes + "      " +shoes)
-            // if (shoeFli.length )
-            if(!shoes === shoeFli.newId ){
-                cartStorage.push(shoeAdded)
-
-            }
-            // cartStorage.push(shoes)
-            // console.log(cartStorage)
+            shoeAdded.qty++
+            cartStorage.push(shoeAdded)
         }
         setShoeData(shoeData)
         return true

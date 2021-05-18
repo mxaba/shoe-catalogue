@@ -21,5 +21,5 @@ function removeItem(removeItem){
         localStorage.setItem('shoeCatalogue', JSON.stringify(instance.getShoeData()))
         disShoeCart.innerHTML = shoeCartTemplate({shoecart: cartST })
     }
-    // location.reload()
+    location.reload()
 }
