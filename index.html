@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME | Shoe Catalogue</title>
     <link rel="stylesheet" href="./css/simple-grid.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
     <script type="text/x-template"class="shoe-catalogue-template">
         {{#each shoesList}}
         <div class="shoes-section">
-                <a href="cart.html"><img src="{{this.img}}" alt=""></a> 
+                <img src="{{this.img}}" alt=""> 
                     <p>
                         {{this.brand}}, 
                         <strong>Size: </strong> {{this.size}}, <br>
                         <strong>Color: </strong> {{this.color}}, <br>
                         <strong>Price: </strong>  R {{this.price}} <br>
                         <strong>Stock: </strong>  {{this.in_stock}} <br>
-                        <button value={{this._id}} onclick="addBtnCart(this.value)" >Add to Cart</button>
+                        <button value={{this._id}} onclick="addBtnCart(this.value)" ><i class="fas fa-shopping-cart">Add to Cart</i></button>
                     </p>
+                    
         </div>
         {{/each}}
     </script>
@@ -30,11 +32,11 @@
     <div class="container">
         <div class="row nav">
             <div class="col-8" style="text-align: unset; align-items: unset; float: left;">
-                <a href="./"><h2>Shoe Catalogue</h2></a>
+                <a href="./"> <img src="https://preview.redd.it/k4utx6hddh851.png?auto=webp&s=ed6462ddb58dd979d94d7c535fbf748903a399c5" alt=""><h3>Lubabalo's Catalogue</h3></a>
             </div>
 
             <div class="col-2">
-                <h6><a href="./cart.html">Cart</a></h6>
+                <h6><a href="./cart.html"><i class="fas fa-shopping-cart">Cart</i></a></h6>
             </div>
             <div class="col-2">
                 <h6><a href="./add.html">Add Shoes</a></h6>
@@ -89,7 +91,7 @@
             
             <div class="col-12">
                 <div class="buttons">
-                    <button class="search">Search</button>
+                    <button class="search"><i class="fas fa-search">Search</i></button>
                     <button class="reset">Rest</button>
                 </div>
             </div>

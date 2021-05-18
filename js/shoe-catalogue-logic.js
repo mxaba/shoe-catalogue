@@ -3,8 +3,6 @@ function ShoesCatalogue(){
     var shoeData = {}
     var cartStorage =  []
 
-    var shoes;
-
     function setShoeData(namePassed){
         shoeData = namePassed
     }
@@ -58,6 +56,7 @@ function ShoesCatalogue(){
                 if (shoe.qty == 1){
                     return parseInt(init) !== shoe._id
                 } else{
+                    // shoe.price -= shoe.price
                     shoe.qty--
                     return shoe._id
                 }
@@ -79,14 +78,25 @@ function ShoesCatalogue(){
         var shoeAdded = shoesFilterFunction({_id: init})[0]
         var shoeFli = shoesFilterCart({_id: init})[0]
 
-        // console.log(shoeAdded)
-        if (shoeAdded.in_stock > 0){
-            shoeAdded.in_stock--
-            shoeAdded.qty++
-            cartStorage.push(shoeAdded)
+        try{
+            if (shoeAdded.in_stock > 0){
+                shoeAdded.in_stock--
+                // shoeAdded.qty++
+                if (shoeAdded.qty > 0){
+                    cartStorage = cartStorage.filter(function(shoe){
+                            // shoe.price = shoe.price * shoe.qty
+                            shoe.qty++
+                            return shoe._id
+                    })
+                } else {
+                    shoeAdded.qty++
+                    cartStorage.push(shoeAdded)
+                }
+            }
+        } finally{
+            setShoeData(shoeData)
+            return true
         }
-        setShoeData(shoeData)
-        return true
     }
 
 

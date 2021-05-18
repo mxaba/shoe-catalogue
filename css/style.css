@@ -6,7 +6,7 @@
 }
 
 .nav {
-  background: black;
+  /* background: black; */
 }
 
 #navText {
@@ -38,3 +38,45 @@
     width: 150px;
     border-radius: 60px;
 }
+.col-8 img {
+    height: 15%;
+    width: 15%;
+    border-radius: 120px;
+    float: left;
+    margin-left: 5%;
+}
+
+.col-8{
+    background-color: #111111;
+}
+.col-2{
+    background-color: white;
+}
+/* h3{
+    text-decoration: none;
+    float: left;
+    margin-left: 2%;
+    margin-top: 5%;
+} */
+
+h3 {
+    font-size: 3vw;
+    float: left;
+    margin-left: 2%;
+    margin-top: 4%;
+    color: black;
+    text-shadow: 4px 4px 0px white;
+    background: none;
+    mix-blend-mode: screen;
+    animation: fadeIn 2.5s linear forwards;
+  }
+  
+  @keyframes fadeIn {
+      0% {
+          opacity: 0
+      }
+  
+      100% {
+          opacity: 1;
+      }
+  }

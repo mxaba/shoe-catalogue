@@ -23,3 +23,8 @@ function removeItem(removeItem){
     }
     location.reload()
 }
+
+document.getElementById('checkOut').addEventListener('click', function(){
+    localStorage.removeItem('addToCart')
+    location.reload()
+})
