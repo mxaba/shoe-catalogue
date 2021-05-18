@@ -11,17 +11,15 @@ instance.setCartStorrage(cartST)
 // var disShoeCart = document.getElementById('shoeCart')
 // disShoeCart.innerHTML = shoeCartTemplate({shoecart: displayCart })
 var disShoeCart = document.getElementById('shoeCart')
-    disShoeCart.innerHTML = shoeCartTemplate({shoecart: cartST })
+disShoeCart.innerHTML = shoeCartTemplate({shoecart: cartST })
 
-function whatsInTheCart(ShoesPassed){
-    // var displayCart = {}
-    // if (typeof ShoesPassed == 'object'){
-    //     displayCart['addToCart'] = ShoesPassed
-    // } else {
-    //     displayCart = JSON.parse(localStorage.getItem('addToCart'))
-    // }
-    // console.log(cartST)
-    
-    var disShoeCart = document.getElementById('shoeCart')
-    disShoeCart.innerHTML = shoeCartTemplate({shoecart: displayCart })
+// console.log("LocalStorg: " + cartST)
+// console.log("Cartalogue: " + cartST)
+function removeItem(removeItem){
+    if (instance.removeItem(removeItem)){
+        localStorage.setItem('addToCart', JSON.stringify(instance.getCartStorage()))
+        localStorage.setItem('shoeCatalogue', JSON.stringify(instance.getShoeData()))
+        disShoeCart.innerHTML = shoeCartTemplate({shoecart: cartST })
+    }
+    // location.reload()
 }

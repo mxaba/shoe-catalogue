@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script type="text/x-template" class="shoe-cart">
+        <div class="col-12">
+            <a href="./"> <button>Shop Again</button> </a> <strong> OR</strong>
+            <button id="checkOut">Checkout</button>
+        </div>
+        
         {{#each shoecart}}
         <div class="shoes-section">
             <img src="{{this.img}}" alt="">
@@ -33,20 +38,8 @@
             </div>
         </div>
 
-        <!-- <div class="row">
-            <div class="col-12">
-
-            </div>
-        </div> -->
-
         <div class="row" id="shoeCart"></div>
 
-        <div class="row">
-            <div class="col-12">
-                <a href="./"> <button>Shop Again</button> </a> <strong> OR</strong>
-                <button id="checkOut">Checkout</button>
-            </div>
-        </div>
     </div>
     
     <script src="./js/shoe-catalogue-logic.js"></script>
