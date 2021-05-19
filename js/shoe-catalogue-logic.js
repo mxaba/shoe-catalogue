@@ -30,8 +30,28 @@ function ShoesCatalogue(){
                 return true
             }
         })
-        // console.log(shoesFiltered)
         return shoesFiltered
+    }
+
+    function addShoesObject(namePassed){
+        var exist = shoeData.filter(function(data){
+            return namePassed._id == data._id
+        }) 
+        if(exist.length != 0) {
+            return shoeData
+        } else {
+            shoeData.push({
+                _id: namePassed._id,
+                qty: namePassed.qty,
+                brand: namePassed.brand,
+                size: namePassed.size,
+                color: namePassed.color,
+                img: namePassed.img,
+                price: namePassed.price,
+                in_stock: namePassed.in_stock
+            })
+            setShoeData(shoeData)
+        }
     }
 
     function shoesFilterCart(shoesFlit){
@@ -45,7 +65,6 @@ function ShoesCatalogue(){
                 return true
             }
         })
-        // console.log(shoesFiltered)
         return shoesFiltered
     }
 
@@ -56,7 +75,6 @@ function ShoesCatalogue(){
                 if (shoe.qty == 1){
                     return parseInt(init) !== shoe._id
                 } else{
-                    // shoe.price -= shoe.price
                     shoe.qty--
                     return shoe._id
                 }
@@ -74,17 +92,14 @@ function ShoesCatalogue(){
     
 
     function addBtnCart(init){
-        // console.log(init)
         var shoeAdded = shoesFilterFunction({_id: init})[0]
         var shoeFli = shoesFilterCart({_id: init})[0]
 
         try{
             if (shoeAdded.in_stock > 0){
                 shoeAdded.in_stock--
-                // shoeAdded.qty++
-                if (shoeAdded.qty > 0){
+                if (shoeAdded.qty > 0 && cartStorage.length !== 0 ){
                     cartStorage = cartStorage.filter(function(shoe){
-                            // shoe.price = shoe.price * shoe.qty
                             shoe.qty++
                             return shoe._id
                     })
@@ -101,6 +116,7 @@ function ShoesCatalogue(){
 
 
     return {
+        addShoesObject,
         removeItem,
         getCartStorage,
         setCartStorrage,

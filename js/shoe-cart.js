@@ -8,13 +8,9 @@ var shoeCartTemplate = Handlebars.compile(shoeCart)
 instance.setShoeData(localShoe)
 instance.setCartStorrage(cartST)
 
-// var disShoeCart = document.getElementById('shoeCart')
-// disShoeCart.innerHTML = shoeCartTemplate({shoecart: displayCart })
 var disShoeCart = document.getElementById('shoeCart')
 disShoeCart.innerHTML = shoeCartTemplate({shoecart: cartST })
 
-// console.log("LocalStorg: " + cartST)
-// console.log("Cartalogue: " + cartST)
 function removeItem(removeItem){
     if (instance.removeItem(removeItem)){
         localStorage.setItem('addToCart', JSON.stringify(instance.getCartStorage()))
@@ -25,6 +21,7 @@ function removeItem(removeItem){
 }
 
 document.getElementById('checkOut').addEventListener('click', function(){
-    localStorage.setItem('addToCart', JSON.stringify([]))
+    instance.setCartStorrage([])
+    localStorage.setItem('addToCart', JSON.stringify(instance.getCartStorage()))
     location.reload()
 })
