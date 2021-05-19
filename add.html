@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Add Shoes</title>
+
+    <link rel="stylesheet" href="./css/simple-grid.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row nav">
+            <div class="col-8" style="text-align: unset; align-items: unset; float: left;">
+                <a href="./"> <img src="https://preview.redd.it/k4utx6hddh851.png?auto=webp&s=ed6462ddb58dd979d94d7c535fbf748903a399c5" alt=""><h3>Lubabalo's Catalogue</h3></a>
+            </div>
+            <div class="col-2">
+                <h6><a href="./cart.html"><i class="fas fa-shopping-cart">Cart</i></a></h6>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <p>This page will allow the Lubabalo to aadd shoes into the catalogue</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <select name="" id="brand" class="brand" required>
+                    <option id="" value="">Select a Brand</option>
+                    <option id="" value="Vans">Vans</option>
+                    <option id="" value="All-Star">All Star</option>
+                    <option id="" value="Nike">Nike</option>
+                    <option id="" value="Jordan">Jordan</option>
+                    <option id="" value="Puma">Puma</option>
+                </select>
+            </div>
+
+            <div class="col-4">
+                <select name="" id="size" class="size" required>
+                    <option id="" value="">Slect Size</option>
+                    <option id="" value=1>1</option>
+                    <option id="" value=2>2</option>
+                    <option id="" value=3>3</option>
+                    <option id="" value=4>4</option>
+                    <option id="" value=5>5</option>
+                    <option id="" value=6>6</option>
+                    <option id="" value=7>7</option>
+                    <option id="" value=8>8</option>
+                    <option id="" value=9>9</option>
+                    <option id="" value=10>10</option>
+                    <option id="" value=11>11</option>
+                </select>
+                
+            </div>
+
+            <div class="col-4" style="margin-top: 0%; background-color: unset;">
+                <select name="" id="color" class="color" required>
+                    <option id="" value="">Select Color</option>
+                    <option id="" value="Black">Black</option>
+                    <option id="" value="White">White</option>
+                    <option id="" value="Green">Green</option>
+                    <option id="" value="Grey">Grey</option>
+                    <option id="" value="Red">Red</option>
+                    <option id="" value="Blue">Blue</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <input type="number" placeholder="Price of the Shoe" required>
+            </div>
+
+            <div class="col-4">
+                <input type="number" placeholder="Stock Number" required>
+            </div>
+
+            <div class="col-4"> 
+                <input type="text" placeholder="Attach a link to the image" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <button> <i class="fas fa-plus"> Add Shoe </i></button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

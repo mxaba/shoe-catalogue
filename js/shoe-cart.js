@@ -25,6 +25,6 @@ function removeItem(removeItem){
 }
 
 document.getElementById('checkOut').addEventListener('click', function(){
-    localStorage.removeItem('addToCart')
+    // localStorage.setItem('addToCart', JSON.stringify([]))
     location.reload()
 })
