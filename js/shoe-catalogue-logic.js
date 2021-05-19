@@ -82,7 +82,7 @@ function ShoesCatalogue(){
             if (shoeAdded.in_stock > 0){
                 shoeAdded.in_stock--
                 // shoeAdded.qty++
-                if (cartStorage.includes(shoeAdded._id)){
+                if (shoeAdded.qty > 0){
                     cartStorage = cartStorage.filter(function(shoe){
                             // shoe.price = shoe.price * shoe.qty
                             shoe.qty++
