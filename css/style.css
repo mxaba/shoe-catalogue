@@ -80,3 +80,6 @@ h3 {
   #notadded {
       color: red;
   }
+  input {
+      background: white;
+  }
