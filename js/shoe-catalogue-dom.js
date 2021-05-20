@@ -30,7 +30,7 @@
     displayShoes(shoeLocal)
 
     function displayShoes(array){
-        shoeSection.innerHTML = shoeCompiledTemplate({shoesList: array} )
+        shoeSection.innerHTML = shoeCompiledTemplate({shoesList: array})
         // console.log(shoeCompiledTemplate({shoesList: initLogic.getShoeData()} ))
     }
 

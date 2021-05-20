@@ -51,6 +51,7 @@ function ShoesCatalogue(){
                 in_stock: namePassed.in_stock
             })
             setShoeData(shoeData)
+            console.log(shoeData)
         }
     }
 
@@ -66,6 +67,15 @@ function ShoesCatalogue(){
             }
         })
         return shoesFiltered
+    }
+
+    function checkOut(){
+        shoeData = shoeData.filter(function(shoes){
+            while (shoes.qty != 0){
+                shoes.qty--
+            } return shoes._id
+        })
+        console.log(shoeData)
     }
 
     function removeItem(init){
@@ -123,6 +133,7 @@ function ShoesCatalogue(){
         addBtnCart,
         shoesFilterFunction,
         setShoeData,
-        getShoeData
+        getShoeData,
+        checkOut
     }
 }

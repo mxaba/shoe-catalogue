@@ -76,3 +76,7 @@ h3 {
           opacity: 1;
       }
   }
+
+  #notadded {
+      color: red;
+  }

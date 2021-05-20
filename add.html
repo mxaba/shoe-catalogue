@@ -26,6 +26,11 @@
         </div>
 
         <div class="row">
+            <div class="row">
+                <div class="col-12">
+                    <h2 id="notadded"></h2>
+                </div>
+            </div>
             <div class="col-12">
                 <p>This page will allow the Lubabalo to aadd shoes into the catalogue</p>
             </div>
@@ -76,26 +81,27 @@
 
         <div class="row">
             <div class="col-4">
-                <input type="number" placeholder="Price of the Shoe" required>
+                <input id="price" type="number" placeholder="Price of the Shoe" required>
             </div>
 
             <div class="col-4">
-                <input type="number" placeholder="Stock Number" required>
+                <input id="stock" type="number" placeholder="Stock Number" required>
             </div>
 
             <div class="col-4"> 
-                <input type="text" placeholder="Attach a link to the image" required>
+                <input type="text" id="img" placeholder="Attach a link to the image" required>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12">
-                <button> <i class="fas fa-plus"> Add Shoe </i></button>
+                <button id="addButton"> <i class="fas fa-plus"> Add Shoe </i></button>
             </div>
         </div>
 
     </div>
 
+    <script src="./js/data.js"></script>
     <script src="./js/shoe-catalogue-logic.js"></script>
     <script src="./js/admin.js"></script>
 </body>
