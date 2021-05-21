@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script type="text/x-template" class="shoe-cart">
-        <div class="col-12">
+        <div class="col-10">
             <h1 id="redirect"></h1>
             <a href="./"> <button><i class="fas fa-shopping-cart">Shop Again</i></button> </a> <strong> OR</strong>
             <button id="checkOut"> <i class="fas fa-money-check"></i> Checkout</button>
         </div>
-        
+        <div class="col-2 class"><h4 class="total">R</h4></div>
+
         {{#each shoecart}}
         <div class="shoes-section">
             <img src="{{this.img}}" alt="">

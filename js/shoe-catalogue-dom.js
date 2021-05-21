@@ -16,6 +16,11 @@
         shoeLocal = Data()
     }
 
+    var total = 0
+    if (localStorage['total']){
+        total = localStorage.getItem("total")
+    }
+    initLogic.setTotal(parseFloat(total))
     var cartST =  {} 
     var cartSTArray = []
     if (localStorage['addToCart']){
@@ -23,10 +28,18 @@
         cartSTArray = JSON.parse(localStorage.getItem('addToCart'))
     }
 
-    initLogic.setShoeData(shoeLocal)
     if (cartSTArray.length !== 0){
         initLogic.setCartStorrage(cartSTArray)
     }
+    initLogic.setShoeData(shoeLocal)
+
+    shoeLocal = shoeLocal.filter(function(shoe){
+        // console.log(shoe)
+        if (shoe.qty == 0){
+            return shoe._id
+        }
+    })
+
     displayShoes(shoeLocal)
 
     function displayShoes(array){
@@ -40,6 +53,7 @@
         if (initLogic.addBtnCart(init)){
             localStorage.setItem('addToCart', JSON.stringify(initLogic.getCartStorage()));
             localStorage.setItem('shoeCatalogue', JSON.stringify(initLogic.getShoeData()));
+            localStorage.setItem("total", initLogic.getTotal());
             displayShoes(shoeLocal)
         }
     }

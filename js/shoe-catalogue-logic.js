@@ -2,6 +2,7 @@ function ShoesCatalogue(){
 
     var shoeData = {}
     var cartStorage =  []
+    var total = 0
 
     function setShoeData(namePassed){
         shoeData = namePassed
@@ -9,6 +10,14 @@ function ShoesCatalogue(){
 
     function setCartStorrage(namePassed){
         cartStorage = namePassed
+    }
+
+    function getTotal(){
+        return total
+    }
+
+    function setTotal(name){
+        total = name
     }
 
     function getShoeData(){
@@ -85,10 +94,12 @@ function ShoesCatalogue(){
             cartStorage = cartStorage.filter(function(shoe){
 
                 if (shoe.qty == 1){
+                    total -= shoe.prc
                     return parseInt(init) !== shoe._id
                 } else{
                     shoe.qty--
                     shoe.price -= shoe.prc
+                    total -= shoe.prc
                     return shoe._id
                 }
             })
@@ -112,16 +123,17 @@ function ShoesCatalogue(){
             if (shoeAdded.in_stock > 0){
                 shoeAdded.in_stock--
                 if (shoeAdded.qty > 0 && cartStorage.length !== 0 ){
-                    console.log('in add')
                     cartStorage = cartStorage.filter(function(shoe){
                             shoe.qty++
                             shoe.price += shoe.prc
+                            total += shoe.prc
                             return shoe._id
                     })
                 } else {
                     while(shoeAdded.price != shoeAdded.prc){
                         shoeAdded.price--
                     }
+                    total += shoeAdded.price
                     shoeAdded.qty++
                     cartStorage.push(shoeAdded)
                 }
@@ -142,6 +154,8 @@ function ShoesCatalogue(){
         shoesFilterFunction,
         setShoeData,
         getShoeData,
-        checkOut
+        checkOut,
+        getTotal,
+        setTotal
     }
 }

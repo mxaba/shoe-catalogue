@@ -66,6 +66,10 @@ h3 {
     mix-blend-mode: screen;
     animation: fadeIn 2.5s linear forwards;
 }
+
+.total{
+    background-color: rgb(245, 142, 142);
+}
   
 @keyframes fadeIn {
   0% {
