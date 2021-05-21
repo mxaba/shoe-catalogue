@@ -25,6 +25,7 @@ addButton.addEventListener('click', function(){
     var addShoesData = {}
     if (brand != '' && color != '' && size != '' && stock != '' && img != '' ){
         addShoesData.brand = brand
+        addShoesData.prc = parseInt(price)
         addShoesData.color = color
         addShoesData.size = parseInt(size)
         addShoesData.in_stock = parseInt(stock)

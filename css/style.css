@@ -65,21 +65,22 @@ h3 {
     background: none;
     mix-blend-mode: screen;
     animation: fadeIn 2.5s linear forwards;
+}
+  
+@keyframes fadeIn {
+  0% {
+    opacity: 0
   }
   
-  @keyframes fadeIn {
-      0% {
-          opacity: 0
-      }
-  
-      100% {
-          opacity: 1;
-      }
-  }
+  100% {
+      opacity: 1;
+    }
+}
 
-  #notadded {
-      color: red;
-  }
-  input {
-      background: white;
-  }
+#notadded {
+  color: red;
+}
+
+input {
+  background: white;
+}

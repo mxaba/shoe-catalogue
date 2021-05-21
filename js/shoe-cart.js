@@ -25,7 +25,7 @@ function removeItem(removeItem){
 // if ()
 
 document.getElementById('checkOut').addEventListener('click', function(){
-    alert('Thank you for shoppinf with us!🤝')
+    alert('Thank you for shopping with us!🤝')
     setTimeout(function(){
         instance.checkOut()
         instance.setCartStorrage([])

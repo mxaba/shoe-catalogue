@@ -48,7 +48,8 @@ function ShoesCatalogue(){
                 color: namePassed.color,
                 img: namePassed.img,
                 price: namePassed.price,
-                in_stock: namePassed.in_stock
+                in_stock: namePassed.in_stock,
+                prc: namePassed.prc
             })
             setShoeData(shoeData)
             console.log(shoeData)
@@ -82,10 +83,12 @@ function ShoesCatalogue(){
         var shoesToAdded = shoesFilterFunction({_id: init})[0]
         try{
             cartStorage = cartStorage.filter(function(shoe){
+
                 if (shoe.qty == 1){
                     return parseInt(init) !== shoe._id
                 } else{
                     shoe.qty--
+                    shoe.price -= shoe.prc
                     return shoe._id
                 }
             })
@@ -109,17 +112,22 @@ function ShoesCatalogue(){
             if (shoeAdded.in_stock > 0){
                 shoeAdded.in_stock--
                 if (shoeAdded.qty > 0 && cartStorage.length !== 0 ){
+                    console.log('in add')
                     cartStorage = cartStorage.filter(function(shoe){
                             shoe.qty++
+                            shoe.price += shoe.prc
                             return shoe._id
                     })
                 } else {
+                    while(shoeAdded.price != shoeAdded.prc){
+                        shoeAdded.price--
+                    }
                     shoeAdded.qty++
                     cartStorage.push(shoeAdded)
                 }
             }
         } finally{
-            setShoeData(shoeData)
+            // setShoeData(shoeData)
             return true
         }
     }
