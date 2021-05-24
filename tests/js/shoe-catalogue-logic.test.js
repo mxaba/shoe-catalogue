@@ -154,5 +154,19 @@ describe('Shoe Catalogue', function(){
         
     })
 
+
+    describe("Shoe Catalogue add to cart", function(){
+        var init = ShoesCatalogue()
+        init.setShoeData(Data())
+        it("It should add the shoes to cart and the total should match with the shoe", function(){
+            var shoeTobeAdded =  { _id:14, qty:0, total:0, brand: "Nike", size:10, color:"Grey",  img: "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F02%2Fnike-air-max-90-essential-grey-social.jpg?w=960&cbr=1&q=90&fit=max", price: 1100, in_stock:43, prc:1100}
+            // var shoeTobeAdded1 =  [ {_id:14, qty:0, total:0, brand: "Nike", size:10, color:"Grey",  img: "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F02%2Fnike-air-max-90-essential-grey-social.jpg?w=960&cbr=1&q=90&fit=max", price: 1100, in_stock:43, prc:1100}]
+            assert.equal(true, init.addBtnCart(shoeTobeAdded))
+            // assert.equal(shoeTobeAdded, init.getCartStorage())
+            init.setTotal(1100)
+            assert.equal(1100, init.getTotal())
+        })
+    })
+
     
 })
