@@ -91,7 +91,7 @@ function ShoesCatalogue(){
     function removeItem(init){
         var shoesToAdded = shoesFilterFunction({_id: init})[0]
         var shoeFli = shoesFilterCart({_id: init})[0]
-        // try{
+        try{
 
             if (shoeFli.qty == 1){
                 total -= shoeFli.prc
@@ -104,10 +104,10 @@ function ShoesCatalogue(){
                 total -= shoeFli.prc
                 shoesToAdded.in_stock++
         }
-        // } finally{
-        //     shoesToAdded.in_stock++
-        //     // setShoeData(shoeData)
-        // }
+        } finally{
+            shoesToAdded.in_stock++
+            // setShoeData(shoeData)
+        }
         return true
     }
 
