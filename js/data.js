@@ -1,6 +1,6 @@
 function Data(){
     var shoesObject = [
-        { _id:1,qty:0, total:0, brand: "Vans", size:10, color:"Black",  img: "https://thumbs.dreamstime.com/b/brand-new-black-white-vans-old-skool-shoes-box-pavia-italy-november-brand-new-black-white-vans-old-skool-shoes-168876419.jpg", price:500, in_stock:10,  prc: 500}, 
+        { _id:1,qty:0, total:0, brand: "Vans", size:10, color:"Black",  img: "https://thumbs.dreamstime.com/b/brand-new-black-white-vans-old-skool-shoes-box-pavia-italy-november-brand-new-black-white-vans-old-skool-shoes-168876419.jpg", price:800, in_stock:10,  prc: 800}, 
         { _id:2, qty:0, total:0, brand: "Vans", size:5, color:"Grey",  img: "https://images.vans.com/is/image/VansEU/VN0A4BV5195-HERO?$PDP-FULL-IMAGE$", price:890, in_stock:4, prc:890},
         { _id:3, qty:0, total:0, brand: "All-Star", size:5, color:"Black",  img: "https://cdn.shopify.com/s/files/1/1536/3179/products/9AF03769-9CA7-4446-B541-D82811FD7CC7_1024x1024.jpg?v=1578161080", price:600, in_stock:25,  prc: 600}, 
         { _id:4, qty:0, total:0, brand: "All-Star", size:5, color:"Grey",  img: "https://www.studio-88.co.za/media/product/41e/converse-all-star-chuck-taylor-hi-mens-wolf-grey-all89wg-f6c.jpg", price: 600, in_stock:7, prc:600},

@@ -33,12 +33,12 @@
     }
     initLogic.setShoeData(shoeLocal)
 
-    shoeLocal = shoeLocal.filter(function(shoe){
-        // console.log(shoe)
-        if (shoe.qty == 0){
-            return shoe._id
-        }
-    })
+    // shoeLocal = shoeLocal.filter(function(shoe){
+    //     // console.log(shoe)
+    //     if (shoe.qty == 0){
+    //         return shoe._id
+    //     }
+    // })
 
     displayShoes(shoeLocal)
 
@@ -48,7 +48,6 @@
     }
 
     function addBtnCart(init){
-        // location.reload()
 
         if (initLogic.addBtnCart(init)){
             localStorage.setItem('addToCart', JSON.stringify(initLogic.getCartStorage()));
@@ -56,6 +55,7 @@
             localStorage.setItem("total", initLogic.getTotal());
             displayShoes(shoeLocal)
         }
+        
     }
 
     reset.addEventListener('click', function(){

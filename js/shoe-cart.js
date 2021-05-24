@@ -23,8 +23,9 @@ function removeItem(removeItem){
     if (instance.removeItem(removeItem)){
         localStorage.setItem('addToCart', JSON.stringify(instance.getCartStorage()))
         localStorage.setItem('shoeCatalogue', JSON.stringify(instance.getShoeData()))
-        localStorage.setItem("total", instance.getTotal());
         disShoeCart.innerHTML = shoeCartTemplate({shoecart: cartST })
+        localStorage.setItem("total", instance.getTotal());
+        document.querySelector('.total').innerHTML = "Total: R "+ parseInt(instance.getTotal())
     }
     location.reload()
 }
@@ -37,7 +38,8 @@ document.getElementById('checkOut').addEventListener('click', function(){
         instance.checkOut()
         instance.setCartStorrage([])
         localStorage.setItem('addToCart', JSON.stringify(instance.getCartStorage()))
-        localStorage.setItem("total", 0);
+        instance.setTotal(0)
+        localStorage.setItem("total", instance.getTotal());
         localStorage.setItem('shoeCatalogue', JSON.stringify(instance.getShoeData()));
         window.location.href = './'
     })

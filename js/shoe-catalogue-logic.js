@@ -90,23 +90,24 @@ function ShoesCatalogue(){
 
     function removeItem(init){
         var shoesToAdded = shoesFilterFunction({_id: init})[0]
-        try{
-            cartStorage = cartStorage.filter(function(shoe){
+        var shoeFli = shoesFilterCart({_id: init})[0]
+        // try{
 
-                if (shoe.qty == 1){
-                    total -= shoe.prc
+            if (shoeFli.qty == 1){
+                total -= shoeFli.prc
+                cartStorage = cartStorage.filter(function(shoe){
                     return parseInt(init) !== shoe._id
-                } else{
-                    shoe.qty--
-                    shoe.price -= shoe.prc
-                    total -= shoe.prc
-                    return shoe._id
-                }
-            })
-        } finally{
-            shoesToAdded.in_stock++
-            setShoeData(shoeData)
+                })
+            } else{
+                shoeFli.qty--
+                shoeFli.price -= shoeFli.prc
+                total -= shoeFli.prc
+                shoesToAdded.in_stock++
         }
+        // } finally{
+        //     shoesToAdded.in_stock++
+        //     // setShoeData(shoeData)
+        // }
         return true
     }
 
@@ -123,12 +124,11 @@ function ShoesCatalogue(){
             if (shoeAdded.in_stock > 0){
                 shoeAdded.in_stock--
                 if (shoeAdded.qty > 0 && cartStorage.length !== 0 ){
-                    cartStorage = cartStorage.filter(function(shoe){
-                            shoe.qty++
-                            shoe.price += shoe.prc
-                            total += shoe.prc
-                            return shoe._id
-                    })
+                    shoeFli.qty++
+                    shoeFli.price += shoeFli.prc
+                    total += shoeFli.prc
+                    console.log(shoeFli)
+                    
                 } else {
                     while(shoeAdded.price != shoeAdded.prc){
                         shoeAdded.price--
@@ -139,7 +139,6 @@ function ShoesCatalogue(){
                 }
             }
         } finally{
-            // setShoeData(shoeData)
             return true
         }
     }
