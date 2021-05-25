@@ -33,7 +33,6 @@ addButton.addEventListener('click', function(){
         addShoesData.price = parseInt(price)
         addShoesData.img = img
         addShoesData.qty = parseInt(qty)
-        console.log('Data to be added: ' + addShoesData)
         instance.addShoesObject(addShoesData)
         localStorage.setItem('shoeCatalogue', JSON.stringify(instance.getShoeData()));
         alert('Shoe was added and now you will be redirected to Shoe Catalogue!🤝')
