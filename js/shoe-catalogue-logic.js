@@ -102,7 +102,6 @@ function ShoesCatalogue(){
                 shoeFli.qty--
                 shoeFli.price -= shoeFli.prc
                 total -= shoeFli.prc
-                shoesToAdded.in_stock++
         }
         } finally{
             shoesToAdded.in_stock++
