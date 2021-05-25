@@ -25,12 +25,12 @@ addButton.addEventListener('click', function(){
     var addShoesData = {}
     if (brand != '' && color != '' && size != '' && stock != '' && img != '' ){
         addShoesData.brand = brand
-        addShoesData.prc = parseInt(price)
+        addShoesData.prc = parseFloat(price)
         addShoesData.color = color
         addShoesData.size = parseInt(size)
         addShoesData.in_stock = parseInt(stock)
         addShoesData._id = instance.getShoeData().length + 1
-        addShoesData.price = parseInt(price)
+        addShoesData.price = parseFloat(price)
         addShoesData.img = img
         addShoesData.qty = parseInt(qty)
         instance.addShoesObject(addShoesData)
