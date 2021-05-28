@@ -1,4 +1,4 @@
-# Shoe Store App
+# Shoe Catalogue
 
 This is Lubabalo's shoe store, this application allow the owner to manage stock, as well as give the customer the opportunity to interface with his store at their comfort of their home.
 
