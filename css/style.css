@@ -5,6 +5,11 @@
     font-weight: 400;
 }
 
+.container{
+    height: 100vh;
+    overflow-y: scroll;
+}
+
 #navText {
     margin-right: 100%;
 }
